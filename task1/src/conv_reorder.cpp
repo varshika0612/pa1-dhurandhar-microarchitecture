@@ -25,5 +25,4 @@ void conv_reorder(const float* in, float* out, const float* ker,
             }
         }
     }
-    conv_naive(in, out, ker, H, W, K);
 }
