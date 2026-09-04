@@ -12,7 +12,7 @@ void conv_tile(const float* in, float* out, const float* ker,
 
     std::memset(out, 0, sizeof(float) * H * W);
 
-    constexpr int TILE_H = 64;
+    constexpr int TILE_H = 4;
     constexpr int TILE_W = 64;
 
     for(int oy0 = 0; oy0 < H; oy0 += TILE_H){
