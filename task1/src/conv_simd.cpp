@@ -9,7 +9,7 @@ void conv_simd(const float* in, float* out, const float* ker,
     const int p = K/2;
     const int in_stride = W + 2*p;
     
-    for(int i = 0; i < H*W; ++i) out[i] = 0.0f;
+    // for(int i = 0; i < H*W; ++i) out[i] = 0.0f;
 
     for(int oy=0; oy<H; ++oy){
         int ox = 0;
