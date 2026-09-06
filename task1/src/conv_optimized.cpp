@@ -3,7 +3,6 @@
 // not intuition, decide.
 
 #include <immintrin.h>
-
 #include "convolution.h"
 
 void conv_optimized(const float* in, float* out, const float* ker,
@@ -111,37 +110,37 @@ void conv_optimized(const float* in, float* out, const float* ker,
                 outv = _mm256_fmadd_ps(_mm256_loadu_ps(&in[(oy + 0) * in_stride + (ox + 4)]), k4, outv);
 
                 // Row 1
-                outv = _mm256_fmadd_ps(_mm256_loadu_ps(&in[(oy + 1) * in_stride + (ox + 5)]), k5, outv);
-                outv = _mm256_fmadd_ps(_mm256_loadu_ps(&in[(oy + 1) * in_stride + (ox + 6)]), k6, outv);
-                outv = _mm256_fmadd_ps(_mm256_loadu_ps(&in[(oy + 1) * in_stride + (ox + 7)]), k7, outv);
-                outv = _mm256_fmadd_ps(_mm256_loadu_ps(&in[(oy + 1) * in_stride + (ox + 8)]), k8, outv);
-                outv = _mm256_fmadd_ps(_mm256_loadu_ps(&in[(oy + 1) * in_stride + (ox + 9)]), k9, outv);
+                outv = _mm256_fmadd_ps(_mm256_loadu_ps(&in[(oy + 1) * in_stride + (ox + 0)]), k5, outv);
+                outv = _mm256_fmadd_ps(_mm256_loadu_ps(&in[(oy + 1) * in_stride + (ox + 1)]), k6, outv);
+                outv = _mm256_fmadd_ps(_mm256_loadu_ps(&in[(oy + 1) * in_stride + (ox + 2)]), k7, outv);
+                outv = _mm256_fmadd_ps(_mm256_loadu_ps(&in[(oy + 1) * in_stride + (ox + 3)]), k8, outv);
+                outv = _mm256_fmadd_ps(_mm256_loadu_ps(&in[(oy + 1) * in_stride + (ox + 4)]), k9, outv);
 
                 // Row 2
-                outv = _mm256_fmadd_ps(_mm256_loadu_ps(&in[(oy + 2) * in_stride + (ox + 10)]), k10, outv);
-                outv = _mm256_fmadd_ps(_mm256_loadu_ps(&in[(oy + 2) * in_stride + (ox + 11)]), k11, outv);
-                outv = _mm256_fmadd_ps(_mm256_loadu_ps(&in[(oy + 2) * in_stride + (ox + 12)]), k12, outv);
-                outv = _mm256_fmadd_ps(_mm256_loadu_ps(&in[(oy + 2) * in_stride + (ox + 13)]), k13, outv);
-                outv = _mm256_fmadd_ps(_mm256_loadu_ps(&in[(oy + 2) * in_stride + (ox + 14)]), k14, outv);
+                outv = _mm256_fmadd_ps(_mm256_loadu_ps(&in[(oy + 2) * in_stride + (ox + 0)]), k10, outv);
+                outv = _mm256_fmadd_ps(_mm256_loadu_ps(&in[(oy + 2) * in_stride + (ox + 1)]), k11, outv);
+                outv = _mm256_fmadd_ps(_mm256_loadu_ps(&in[(oy + 2) * in_stride + (ox + 2)]), k12, outv);
+                outv = _mm256_fmadd_ps(_mm256_loadu_ps(&in[(oy + 2) * in_stride + (ox + 3)]), k13, outv);
+                outv = _mm256_fmadd_ps(_mm256_loadu_ps(&in[(oy + 2) * in_stride + (ox + 4)]), k14, outv);
 
                 // Row 3
-                outv = _mm256_fmadd_ps(_mm256_loadu_ps(&in[(oy + 3) * in_stride + (ox + 15)]), k15, outv);
-                outv = _mm256_fmadd_ps(_mm256_loadu_ps(&in[(oy + 3) * in_stride + (ox + 16)]), k16, outv);
-                outv = _mm256_fmadd_ps(_mm256_loadu_ps(&in[(oy + 3) * in_stride + (ox + 17)]), k17, outv);
-                outv = _mm256_fmadd_ps(_mm256_loadu_ps(&in[(oy + 3) * in_stride + (ox + 18)]), k18, outv);
-                outv = _mm256_fmadd_ps(_mm256_loadu_ps(&in[(oy + 3) * in_stride + (ox + 19)]), k19, outv);
+                outv = _mm256_fmadd_ps(_mm256_loadu_ps(&in[(oy + 3) * in_stride + (ox + 0)]), k15, outv);
+                outv = _mm256_fmadd_ps(_mm256_loadu_ps(&in[(oy + 3) * in_stride + (ox + 1)]), k16, outv);
+                outv = _mm256_fmadd_ps(_mm256_loadu_ps(&in[(oy + 3) * in_stride + (ox + 2)]), k17, outv);
+                outv = _mm256_fmadd_ps(_mm256_loadu_ps(&in[(oy + 3) * in_stride + (ox + 3)]), k18, outv);
+                outv = _mm256_fmadd_ps(_mm256_loadu_ps(&in[(oy + 3) * in_stride + (ox + 4)]), k19, outv);
 
                 // Row 4
-                outv = _mm256_fmadd_ps(_mm256_loadu_ps(&in[(oy + 4) * in_stride + (ox + 20)]), k20, outv);
-                outv = _mm256_fmadd_ps(_mm256_loadu_ps(&in[(oy + 4) * in_stride + (ox + 21)]), k21, outv);
-                outv = _mm256_fmadd_ps(_mm256_loadu_ps(&in[(oy + 4) * in_stride + (ox + 22)]), k22, outv);
-                outv = _mm256_fmadd_ps(_mm256_loadu_ps(&in[(oy + 4) * in_stride + (ox + 23)]), k23, outv);
-                outv = _mm256_fmadd_ps(_mm256_loadu_ps(&in[(oy + 4) * in_stride + (ox + 24)]), k24, outv);
+                outv = _mm256_fmadd_ps(_mm256_loadu_ps(&in[(oy + 4) * in_stride + (ox + 0)]), k20, outv);
+                outv = _mm256_fmadd_ps(_mm256_loadu_ps(&in[(oy + 4) * in_stride + (ox + 1)]), k21, outv);
+                outv = _mm256_fmadd_ps(_mm256_loadu_ps(&in[(oy + 4) * in_stride + (ox + 2)]), k22, outv);
+                outv = _mm256_fmadd_ps(_mm256_loadu_ps(&in[(oy + 4) * in_stride + (ox + 3)]), k23, outv);
+                outv = _mm256_fmadd_ps(_mm256_loadu_ps(&in[(oy + 4) * in_stride + (ox + 4)]), k24, outv);
 
                 _mm256_storeu_ps(&out[oy * W + ox], outv);
             }
 
-            for(; ox < W; ++ox){
+            for(; ox < W; ++ox) {
                 float acc = 0.0f;
 
                 // Row 0
