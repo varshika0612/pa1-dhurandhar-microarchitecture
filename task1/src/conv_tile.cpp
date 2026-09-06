@@ -16,7 +16,7 @@ void conv_tile(const float* in, float* out, const float* ker,
     constexpr int TILE_W = 64;
 
     for(int oy0 = 0; oy0 < H; oy0 += TILE_H){
-        const int oy_end = std::min(oy0 += TILE_H, H);
+        const int oy_end = std::min(oy0 +TILE_H, H);
 
         for(int ox0 = 0; ox0 < W; ox0 += TILE_W){
             const int ox_end = std::min(ox0 + TILE_W, W);
