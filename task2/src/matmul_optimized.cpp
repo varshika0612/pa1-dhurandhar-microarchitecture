@@ -66,8 +66,9 @@ void matmul_optimized(const float* A, const float* B, float* C,
                         _mm_prefetch( reinterpret_cast< const char* > (b0 +p+ 32), _MM_HINT_T0);
                         _mm_prefetch(reinterpret_cast  <const char*>(b1 +p+32),_MM_HINT_T0);
 
-                        __m256 vb1=_mm256_loadu_ps(b1+p);
                         __m256 vb0=_mm256_loadu_ps(b0+p);
+
+                        __m256 vb1=_mm256_loadu_ps(b1+p);
 
                         __m256 va0 = _mm256_loadu_ps(a0+p);
                         c00 = _mm256_fmadd_ps(va0, vb0, c00);
@@ -92,14 +93,14 @@ void matmul_optimized(const float* A, const float* B, float* C,
                         c31=_mm256_fmadd_ps(va3,vb1,c31);
                     }
 
-                                        float acc00=opt_add(c00);
+                    float acc00=opt_add(c00);
                     float acc01=  opt_add (c01);
                     float acc10 =opt_add(c10);
                     float acc11= opt_add(c11);
 
-                    float acc21= opt_add(c21);
 
                     float acc20=opt_add(c20);
+                    float acc21= opt_add(c21);
 
                     float acc30= opt_add  (c30);
                     float acc31=opt_add(c31);
