@@ -17,8 +17,8 @@ void matmul_prefetch(const float* A, const float* B, float* C,
             float acc=0.0f;
             for(int p=0;p<K;++p){
                 if((p&7)==0){
-               _mm_prefetch((const char*)&a[p+64],_MM_HINT_T1);
-               _mm_prefetch((const char*)&b[p+64],_MM_HINT_T1);
+               _mm_prefetch((const char*)&a[p+32],_MM_HINT_T0);
+               _mm_prefetch((const char*)&b[p+32],_MM_HINT_T0);
                 }
                 
 
